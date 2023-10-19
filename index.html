@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Age Calculator App</title>
+</head>
+<body>
+  <main>
+    <div id="container">
+      <div id="input-date">
+        <div id="day" class="input-div">
+          <h1 class="title">DAY</h1>
+          <input onkeyup="typing()" type="text" class="input" id="input-day" placeholder="DD">
+          <span class="error-span" id="day-error-span"></span>
+        </div>       
+        <div id="month" class="input-div">
+          <h2 class="title">MONTH</h2>
+          <input onkeyup="typing()" type="text" class="input" id="input-month" placeholder="MM">
+          <span class="error-span" id="month-error-span"></span>
+        </div>
+        <div id="year" class="input-div">
+          <h3 class="title">YEAR</h3>
+          <input onkeyup="typing()" type="text" class="input" id="input-year" placeholder="YYYY">
+          <span class="error-span" id="year-error-span"></span>
+        </div>
+      </div>
+      <div id="confirm-div">
+        <div id="division-line"></div>
+        <div id="confirm-button">
+          <img src="assets/images/icon-arrow.svg" alt="">
+        </div>     
+      </div>
+      <div id="result-div">  
+        <p>
+          <span class="info-span" id="year-span">--</span> years
+        </p>    
+        <p>
+          <span class="info-span" id="month-span">--</span> months
+        </p>  
+        <p>
+          <span class="info-span" id="day-span">--</span> days
+        </p>       
+      </div>
+    </div>
+  </main>
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/itsale-o">Alessandra Oliveira</a>.
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>
