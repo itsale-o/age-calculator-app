@@ -1,4 +1,3 @@
-// HTML elements
 const inputDay = document.getElementById("input-day");
 const inputMonth = document.getElementById("input-month");
 const inputYear = document.getElementById("input-year");
@@ -14,22 +13,22 @@ const monthSpan = document.getElementById("month-span");
 const yearSpan = document.getElementById("year-span");
 
 confirmButton.addEventListener("click", e => {
-    var day = inputDay.value.trim();
-    var month = inputMonth.value.trim();
-    var year = inputYear.value.trim();
+    let day = inputDay.value.trim();
+    let month = inputMonth.value.trim();
+    let year = inputYear.value.trim();
 
     const currentDay = new Date();
-    var userDate = new Date(`${month}-${day}-${year}`)
+    let userDate = new Date(`${month}-${day}-${year}`)
 
-    var totalDays = Math.floor((currentDay - userDate) / (1000 * 60 * 60 * 24))
+    let totalDays = Math.floor((currentDay - userDate) / (1000 * 60 * 60 * 24))
 
-    var years = Math.floor(totalDays / 365) 
-    var restYears = totalDays % 365
+    let years = Math.floor(totalDays / 365) 
+    let restYears = totalDays % 365
 
-    var months = Math.floor(restYears / 30)
-    var days = restYears % 30
+    let months = Math.floor(restYears / 30)
+    let days = restYears % 30
   
-    if(((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) || (day < 0 || month < 0 || year < 0)){ 
+    if(((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) || (day < 0 || month < 0 || year < 0) || (month == 2 && day > 29)){ 
         errorFunc();
         dayErrorSpan.innerText = "Must be a valid date";
         dayErrorSpan.style.display = "block";
@@ -63,7 +62,7 @@ confirmButton.addEventListener("click", e => {
     }else if(year > new Date().getFullYear()){
         errorFunc();
         invalidYear();
-    }else if(month >= new Date().getMonth() + 1 && year >= new Date().getFullYear()){
+    }else if(day > new Date().getDate() && month >= new Date().getMonth() + 1 && year >= new Date().getFullYear()){
         errorFunc();
         yearErrorSpan.innerText = "Must be in the past";
         yearErrorSpan.style.display = "block";  
